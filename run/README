@@ -1,0 +1,33 @@
+Adprog BASIC CRUD Web App Assignment
+
+if(user == 'Professor')
+	print('Hello Sir')
+else
+	print('You may expect some hardcore back-end codes now but for the front-end,
+	expect the other way around')
+
+Instructions :
+
+	Create your own database but here's how to do it in order for it to synchronize
+	with this web app (just copy-paste it if you want):
+		create database cardb;
+		create table cars(
+			id int auto_increment unique,
+			make varchar(50) not null,
+			model varchar(50) not null,
+			year int not null,
+			plnum varchar(50) not null,
+			cond enum('Brand New', 'Pre-Owned') not null,
+			primary key(id)
+		);
+		create table users(
+			username varchar(50) not null,
+			password varchar(50) not null,
+			primary key(username)
+		);
+
+	Run the app directly(don't worry it contains middlewares[and instructions] that
+	will indicate if your database is off or has a wrong password configured in your
+	.env file and also indicates if your host is faulty)
+
+	Hope you'll enjoy it.

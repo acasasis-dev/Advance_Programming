@@ -1,0 +1,40 @@
+extends ../../template/master.pug
+
+block content
+        div(style='float: left')
+                h1.title(style='color: green;') Update
+        div(style='float : right;')
+                a(href='/read')
+                        button.button(type='button')
+                                strong(style='color: green;') View Car Records
+        form(method='POST' action='/update')
+                br
+                br
+                hr
+                strong(style='float: right; color: red;') All fields are required especially ID
+                br
+                .field
+                        .label Enter the ID of the Car you want to update :
+                        .control
+                                input.input(type='number' name='id')
+                .field
+                        .label Value you want to update :
+                        .control
+                                .select
+                                        select(type='select' name='reqcol' required='true')
+                                                option(value='make') Make
+                                                option(value='model') Model
+                                                option(value='year') Year
+                                                option(value='plnum') Plate Number
+                                                option(value='cond') Condition
+                .field
+                        .label To :
+                        .control
+                                input.input(type='text' name='newcont')
+                br
+                button.button(type='submit')
+                        strong(style='color: green;') Submit
+                a(href='/home')
+                        button.button(type='button')
+                                strong(style='color: green;') Cancel
+

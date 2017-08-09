@@ -1,0 +1,39 @@
+extends ../../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Create
+	div
+		br
+		br
+		hr
+		form(method="POST" action="/create")
+			.field
+				.label Make
+				.control
+					input.input(type="text" name="make")
+			.field
+				.label Model
+				.control
+				input.input(type='text' name='model')
+			.field
+				.label Year
+				.control
+					input.input(type='text' name='year')
+			.field
+				.label Plate Number
+				.control
+					input.input(type='text' name='plnum')
+			.field
+				.label Condition
+				.control
+					.select
+						select(type='select' name='cond' required='true')
+							option(value='Brand New') Brand New
+							option(value='Pre-Owned') Pre-Owned
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Submit
+			a(href='/home')
+				button.button(type='button')
+					strong(style='color: green;') Cancel

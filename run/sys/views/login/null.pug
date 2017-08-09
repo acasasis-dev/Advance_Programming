@@ -1,0 +1,26 @@
+extends ../../template/master.pug
+
+block content
+	div(style='float: left')
+		h1.title(style='color: green;') Unidentified Car Company
+	div(style='float: right')
+		a(href='/signup')
+			button.button(type='button')
+				strong(style='color: green;') Create an account
+	div
+		br
+		br
+		hr
+		strong(style='color: red; float: right;') * All fields are required
+		form(method='POST' action='/login')
+			.field
+				.label Username
+				.control
+					input.input(type='text' name='username')
+			.field
+				.label Password
+				.control
+				input.input(type='password' name='password')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Login
