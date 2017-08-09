@@ -32,6 +32,6 @@ Instructions :
 		node index.js
 		
 	Then on your browser start with `localhost:5555/login` or with the port 
-	indicated your console.
+	indicated on your console.
 
 	Hope you'll enjoy it.
