@@ -31,6 +31,7 @@ Instructions :
 	.env file and also indicates if your host is faulty) by typing the command :
 		node index.js
 		
-	Then on your browser start with `localhost:5555/login` or the with the port on your console.
+	Then on your browser start with `localhost:5555/login` or the with the port on 
+	your console.
 
 	Hope you'll enjoy it.
