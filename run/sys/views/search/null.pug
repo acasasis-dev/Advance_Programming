@@ -1,0 +1,18 @@
+extends ../../template/master.pug
+
+block content
+	div(style='float : left;')
+		h1.title(style='color: green;') Search
+	div(style='float : right;')
+		a(href='/home')
+			button.button(type='button')
+				strong(style='color: green;') Back to HOME
+	div
+		br
+		br
+		hr
+		form(method='POST' action='/search')
+			input.input(type='number' name='id' placeholder='Enter the ID of the Car')
+			input.input(type='submit' style='color: green;' value='Search')
+	div
+		strong(style='color: red;') Record Query is empty

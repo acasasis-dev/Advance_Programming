@@ -1,0 +1,20 @@
+extends ../../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green') Delete
+	div
+		br
+		br
+		hr
+		form(method='POST' action='/delete')
+			.field
+				.label Enter the ID of the car you want to delete :
+				.control
+					input.input(type='number' name='id')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Submit
+			a(href='/home')
+				button.button(type='button')
+					strong(style='color: green;') Cancel

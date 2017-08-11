@@ -1,0 +1,16 @@
+extends ../../template/master.pug
+
+block content
+	div(style='float: center')
+		center
+			h1.title(style='color: red;') ERROR: Something with your host
+			strong(style='color: red;') Choose a DIFFERENT one from the one you're 	using below
+			br
+			a(href='http://localhost:5555/login')
+				strong(style='color: blue;') Localhost
+			br
+			a(href='http://127.0.0.1:5555/login')
+				strong(style='color: blue;') 127.0.0.1
+			br
+			a(href='http://0.0.0.0:5555/login')
+				strong(style='color: blue;') 0.0.0.0
