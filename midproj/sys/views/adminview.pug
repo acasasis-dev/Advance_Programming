@@ -1,0 +1,13 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Post Categories
+	div
+		br
+		br
+		hr
+		each cat in cats
+			li: a(href=`/admin/edit/${cat.id}`)
+					strong= cat.category_name
+			br

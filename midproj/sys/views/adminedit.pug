@@ -1,0 +1,15 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Edit Category
+	div
+		br
+		br
+		hr
+		each cat in cats
+			form(method="POST" action=`/admin/edit/${cat.id}`)
+				.field
+					.label Change to :
+					.control
+						input.input(type='text' name='newcat' placeholder=cat.category_name)

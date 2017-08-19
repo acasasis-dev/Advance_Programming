@@ -1,0 +1,24 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Edit your post
+	div
+		br
+		br
+		hr
+		each post in posts
+			form(method="POST" action=`/userposts/${post.id}/edit`)
+				.field
+					.label Change to :
+					.control
+						input.input(type='text' name='title' placeholder=post.post_title)
+					br
+					.control
+						input.input(type='text' name='content' placeholder=post.post_content)
+					button.button(type='submit')
+						strong(style='color: green;') Submit
+					a(href=`/userposts/${post.id}`)
+						button.button(type='button')
+							strong(style='color: green;') Cancel		
+

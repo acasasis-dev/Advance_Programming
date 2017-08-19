@@ -1,0 +1,42 @@
+extends ../template/master.pug
+
+block content
+	- var hasExisted = typeof exists !== 'undefined'? 'Username already exists' : ''
+	- var hasNoninput = typeof noninput !== 'undefined'? 'All fields are required' : ''
+	- var hasDontmatch = typeof dontmatch !== 'undefined'? 'Confirmation password didn\'t match' : ''
+
+	div(style='float: left')
+		h1.title(style='color: green;') Sign Up
+	div
+		br
+		br
+		hr
+		if hasExisted || hasNoninput || hasDontmatch
+			strong(style='float: right; color: red;') #{hasExisted || hasNoninput || hasDontmatch}
+		form(method='POST' action='/signup')
+			.field
+				.label Create username :
+				.control
+					input.input(type='text' name='username')
+			.field
+				.label Create password :
+				.control
+					input.input(type='password' name='password')
+			.field
+				.label Re-enter password :
+				.control
+					input.input(type='password' name='confirm')
+			.field
+				.label E-mail :
+				.control
+					input.input(type='email' name='email')
+			.field
+				.label Birthdate :
+				.control
+					input.input(type='text' name='date')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Create
+			a(href='/login')
+				button.button(type='button')
+					strong(style='color: green;') Cancel			

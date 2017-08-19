@@ -1,0 +1,22 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;')= `Chat with ${uname} :`
+	div
+		br
+		br
+		hr
+		each chat in chats
+			strong= chat.chat
+			br
+		form(method="POST" action=`/chat/${uname}`)
+			.field
+			.control
+				input.input(type='text' name='chat')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Submit
+			a(href='/chat')
+				button.button(type='button')
+					strong(style='color: green;') Cancel

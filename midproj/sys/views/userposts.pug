@@ -1,0 +1,18 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Your Posts
+	div(style='float: right;')
+		a(href=`/home`)
+			button.button(type='button')
+				strong(style='color: green;') Back to HOME
+	div
+		br
+		br
+		hr
+		each post in posts
+			td: a(href=`/userposts/${post.id}`)
+				strong
+					li= `${post.id} - ${post.post_title}`
+			br

@@ -1,0 +1,31 @@
+extends ../template/master.pug
+
+block content
+        div(style='float : left;')
+                h1.title(style='color: green;') Hello, Admin 
+                        each user in users
+                                strong= user.username
+        div(style='float : right;')
+                a(href='/home')
+                        button.button(type='button')
+                                strong(style='color: green;') Normal User
+        br
+        br
+        hr
+        center
+                a(href='/admin/view')
+                                button.button(type='button')
+                                        strong(style='color: green;') Categories
+                br
+                br
+                a(href='/admin/create')
+                                button.button(type='button')
+                                        strong(style='color: green;') Create a category
+                br
+                br
+                br
+                br
+                a(href='/logout')
+                                button.button(type='button')
+                                        strong(style='color: green;') Logout
+                br

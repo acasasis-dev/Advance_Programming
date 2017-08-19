@@ -1,0 +1,32 @@
+extends ../template/master.pug
+
+block content
+	- var hasIncorrect = typeof incorrect !== 'undefined'?  'Incorrect password' : ''
+	- var hasNonexist = typeof nonexist !== 'undefined'? 'No such user, signup first' : ''
+	- var hasNull = typeof noninput !== 'undefined'? 'All fields are required' : ''
+	- var hasBadreq = typeof badreq !== 'undefined'? 'Bad user. Login first' : ''
+
+	div(style='float: left')
+		h1.title(style='color: green;') Unidentified Forum
+	div(style='float: right')
+		a(href='/signup')
+			button.button(type='button')
+				strong(style='color: green;') Create an account
+	div
+		br
+		br
+		hr
+		if hasIncorrect || hasNonexist || hasNull || hasBadreq
+			strong(style='float: right; color: red;') #{hasIncorrect || hasNonexist || hasNull || hasBadreq}
+		form(method='POST' action='/login')
+			.field
+				.label Username
+				.control
+					input.input(type='text' name='username')
+			.field
+				.label Password
+				.control
+					input.input(type='password' name='password')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Login

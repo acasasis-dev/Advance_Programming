@@ -1,0 +1,20 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Create Post
+	div
+		br
+		br
+		hr
+		form(method="POST" action="/admin/create")
+			.field
+				.label Post Category
+				.control
+					input.input(type='text' name='cat')
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Submit
+			a(href='/admin/home')
+				button.button(type='button')
+					strong(style='color: green;') Cancel

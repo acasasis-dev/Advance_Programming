@@ -1,0 +1,36 @@
+extends ../template/master.pug
+
+block content
+        div(style='float : left;')
+                h1.title(style='color: green;') Hello, 
+                        each user in users
+                                strong= user.username
+        div(style='float: right;')
+                a(href='/chat')
+                        button.button(type='button')
+                                strong(style='color: green;') Messaging
+        br
+        br
+        hr
+        center
+                a(href='/browse')
+                                button.button(type='button')
+                                        strong(style='color: green;') Browse posts
+                br
+                br
+                a(href='/create')
+                                button.button(type='button')
+                                        strong(style='color: green;') Create post
+                br
+                br
+                a(href='/userposts')
+                                button.button(type='button')
+                                        strong(style='color: green;') Modify your posts
+                br
+                br
+                br
+                br
+                a(href='/logout')
+                                button.button(type='button')
+                                        strong(style='color: green;') Logout
+                br

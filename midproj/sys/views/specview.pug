@@ -1,0 +1,20 @@
+extends ../template/master.pug
+
+block content
+	each post in posts
+		div(style='float: left;')
+			h1.title(style='color: green;')= post.post_title
+		div(style='float: right;')
+			a(href=`/browse/${catid}`)
+				button.button(type='button')
+					strong(style='color: green;') Back to Posts
+		div
+			br
+			br
+			hr
+			strong= post.author
+			strong  @ 
+			strong= post.post_date
+			br
+			p
+				strong= post.post_content

@@ -1,0 +1,32 @@
+extends ../template/master.pug
+
+block content
+	div(style='float: left;')
+		h1.title(style='color: green;') Create
+	div
+		br
+		br
+		hr
+		form(method="POST" action="/create")
+			.field
+				.label Post Category
+				.control
+					.select
+						select(type='select' name='postcat' require='true')
+							each cat in cats
+								option(value=cat.id)= cat.category_name
+			.field
+				.label Post Title
+				.control
+				input.input(type='text' name='post_title')
+			.field
+				.label Post Content
+				.control
+					input.input(type='text' name='post_content')
+			br
+			br
+			button.button(type='submit')
+				strong(style='color: green;') Submit
+			a(href='/home')
+				button.button(type='button')
+					strong(style='color: green;') Cancel
