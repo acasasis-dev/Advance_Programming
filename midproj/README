@@ -46,6 +46,8 @@ Instructions :
 	);
 
 	nodemon index.js / node index.js
+	
+	localhost:5555
 
 Note: If you're gonna register an Admin account just Sign-up and configure it on
 	MySQL (update user set user_type="Admin" where username="<your username>")
